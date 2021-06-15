@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6759" started-at="2021-06-09T06:49:03Z" finished-at="2021-06-09T06:49:09Z">
+  <suite name="Default suite" duration-ms="4301" started-at="2021-06-15T04:33:20Z" finished-at="2021-06-15T04:33:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6759" started-at="2021-06-09T06:49:03Z" finished-at="2021-06-09T06:49:09Z">
-      <class name="oAuth2.AccessTokenPost">
-        <test-method status="PASS" signature="getTokenAndThenPostReq()[pri:0, instance:oAuth2.AccessTokenPost@67a20f67]" name="getTokenAndThenPostReq" duration-ms="6712" started-at="2021-06-09T12:19:03Z" finished-at="2021-06-09T12:19:09Z">
+    <test name="Default test" duration-ms="4301" started-at="2021-06-15T04:33:20Z" finished-at="2021-06-15T04:33:24Z">
+      <class name="pojoHttpMethod.PostMethod">
+        <test-method status="PASS" signature="postMethod()[pri:0, instance:pojoHttpMethod.PostMethod@4678c730]" name="postMethod" duration-ms="4281" started-at="2021-06-15T10:03:20Z" finished-at="2021-06-15T10:03:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getTokenAndThenPostReq -->
-      </class> <!-- oAuth2.AccessTokenPost -->
+        </test-method> <!-- postMethod -->
+      </class> <!-- pojoHttpMethod.PostMethod -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

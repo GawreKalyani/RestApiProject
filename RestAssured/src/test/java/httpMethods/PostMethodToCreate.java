@@ -13,9 +13,12 @@ public class PostMethodToCreate {
 	@Test
 	public void postMethod() {
 		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/";
-		Response response = RestAssured.given().header("Content-type", "application/json; charset=UTF-8").body(
-				"" + "    \"title\": \"foo\",\r\n" + "    \"body\": \"bar\",\r\n" + "    \"userId\": \"1\"\r\n" + "}")
-				.when().post("posts");
+		Response response = RestAssured
+				.given()
+				.header("Content-type", "application/json; charset=UTF-8")
+				.body("" + "    \"title\": \"foo\",\r\n" + "    \"body\": \"bar\",\r\n" + "    \"userId\": \"1\"\r\n" + "}")
+				.when()
+				.post("posts");
 		System.out.println("response-->" + response);
 		System.out.println("body--->" + response.getBody().asPrettyString());
 		System.out.println("status code--->" + response.statusCode());
@@ -35,9 +38,13 @@ public class PostMethodToCreate {
 		hm.put("Content-Type", "application/json; charset=UTF-8");
 
 		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/";
-		Response r = RestAssured.given().headers(hm).body(
-				"" + "    \"title\": \"foo\",\r\n" + "    \"body\": \"bar\",\r\n" + "    \"userId\": \"1\"\r\n" + "}")
-				.when().post("posts/1");
+		Response r = RestAssured
+								.given()
+								.headers(hm)
+								.body(
+								"" + "    \"title\": \"foo\",\r\n" + "    \"body\": \"bar\",\r\n" + "    \"userId\": \"1\"\r\n" + "}")
+								.when()
+								.post("posts/1");
 		
 		System.out.println("header-->"+r.getHeaders());
 		Assert.assertEquals(r.getStatusCode(), 400);

@@ -13,7 +13,11 @@ public class FilteringQueryParam {
 	@Test
 	public void getQueryParameter(){ //param are passed ingiven
 	RestAssured.baseURI="https://jsonplaceholder.typicode.com/";
-	Response response=RestAssured.given().queryParam("userId","1").when().get("posts/");
+	Response response=RestAssured
+			.given()
+			.queryParam("userId","1")
+			.when()
+			.get("posts/");
 	System.out.println("status code--->"+response.getStatusCode());
 	Assert.assertEquals(response.getStatusCode(), 200);
 	

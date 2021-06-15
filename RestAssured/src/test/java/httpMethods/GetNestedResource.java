@@ -11,15 +11,17 @@ import io.restassured.response.Response;
 
 public class GetNestedResource {
 
-	
 	@Test
 	public void test(){
 		RestAssured.baseURI="https://jsonplaceholder.typicode.com/";
-		Response response=RestAssured.given().when().get("posts/1/comments");
+		Response response=RestAssured
+									.given()
+									.when()
+									.get("posts/1/comments");
 		System.out.println("status code-->"+response.getStatusCode());
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
-		//we get boddy in response
+		//we get body in response
 		JsonPath jspath=new JsonPath(response.getBody().asPrettyString());
 		System.out.println("email attribute-->"+jspath.getString("email"));//[-,-,-,-,-]
 		System.out.println("email size-->"+jspath.get("email.size")); //5

@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="jira.GetMethod">
+      <class name="jiraBasicAuthentication.GetCommentByPojo">
         <methods>
-          <include name="getMethod1"/>
+          <include name="getComments"/>
         </methods>
-      </class> <!-- jira.GetMethod -->
+      </class> <!-- jiraBasicAuthentication.GetCommentByPojo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

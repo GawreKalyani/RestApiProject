@@ -14,11 +14,11 @@ import io.restassured.response.Response;
 public class AdvanceBodyPost {
 	@Test
 	public void jsonPostEx(){
-		JSONObject jo=new JSONObject();
+		JSONObject jo=new JSONObject();     //hashmap
 		jo.put("name", "morpheus");
 		jo.put("job", "leader");
 		
-		JSONArray ja=new JSONArray();
+		JSONArray ja=new JSONArray();        //arraylist
 		ja.put("Java");
 		ja.put("C");
 		
@@ -27,8 +27,11 @@ public class AdvanceBodyPost {
 		de.put("companyName", "XYZ");
 		de.put("emailId", "morpheus@xyz.com");
 		jo.put("details",de);
+		
 		RestAssured.baseURI = "https://reqres.in/api/";
-		Response response = RestAssured.given().header("Content-type", "application/json; charset=UTF-8")
+		Response response = RestAssured
+							.given()
+							.header("Content-type", "application/json; charset=UTF-8")
 							.body(jo.toString()).when()
 							.post("users");
 		System.out.println("status code--->"+response.getStatusCode());
@@ -53,7 +56,9 @@ public class AdvanceBodyPost {
 		de.put("emailId", "morpheus@xyz.com");
 		map.put("details", de);
 		RestAssured.baseURI = "https://reqres.in/api/";
-		Response response = RestAssured.given().header("Content-type", "application/json")
+		Response response = RestAssured
+							.given()
+							.header("Content-type", "application/json")
 							.body(map.toString()).when()
 							.post("users");
 		System.out.println("status code--->"+response.getStatusCode());

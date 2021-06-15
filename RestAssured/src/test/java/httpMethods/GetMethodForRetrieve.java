@@ -26,7 +26,10 @@ public class GetMethodForRetrieve {
 	@Test
 	public void test(){
 		RestAssured.baseURI="https://jsonplaceholder.typicode.com/";
-		Response r=RestAssured.given().when().get("posts/2");
+		Response r=RestAssured
+							.given()
+							.when()
+							.get("posts/2");
 		System.out.println("status code--->"+r.getStatusCode());
 		System.out.println("body--->"+r.getBody().asPrettyString());
 		System.out.println("header-->"+r.getHeader("Connection"));

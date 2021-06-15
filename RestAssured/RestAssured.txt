@@ -1,0 +1,132 @@
+https://restfulapi.net/http-status-codes/
+
+API stands for Application Transfer Interface
+REST stands for Representational State Transfe
+
+End point: Address where API is hosted on the Server.
+
+HTTP methods which are commonly used to communicate with Rest API’s are
+GET, POST, PUT,PATCH, and DELETE  ---CURD (create,update,retrive and delete)
+
+Resources:
+Resources represent API/Collection which can be 
+accessed from the Server.
+Google.com/maps
+Google.com/search
+Google.com/images
+
+Path Parameters:
+Path parameters are variable parts of a URL path.
+They are typically used to point to a specific 
+resource within a collection, 
+such as a user identified by ID
+
+https://www.Google.com/Images/1123343
+https://www.Google.com/docs/1123343
+https://amazon.com/orders/112
+
+Query Parameters:
+Query Parameter is used to sort/filter the resources.
+Query Parameters are identified with?””
+https://amazon.com/orders?sort_by=2/20/2020
+
+Headers/Cookies:
+
+Headers represent the meta-data associated with 
+the API request and response. 
+In layman terms, we were sending Additional 
+details to API to process our request.
+Example : Authorization details
+
+End Point Request URL can be constructed as below
+URI=Base URL/resource/(Query/Path)Parameters
+
+http://google.com/images/img2
+http://google.com/images?sort_by="10/05/2020"
+
+Status code 
+1XX --- informatinal 
+2XX --- Sucess 
+3XX --- redirectinal
+4XX --- client error
+5XX --- server error
+
+2XX					4XX						5XX
+200 (ok)			400 (Bad Request)    500 Internal Server Error
+201 (Created)		401 (Unauthorized)	 502 Bad Gateway
+202 (Accepted)		404 (Not Found)
+
+
+json/xml
+[{
+	keys : value,
+	keys : value,
+}]
+
+End point = https://jsonplaceholder.typicode.com/posts
+
+Rest Assured 
+
+Given()
+	//pre-reqisite
+	request construction 
+
+When()
+	//we perform action
+	//Get(),Post(),Put() or Delete()
+	
+Then()
+	// verification or assertions 
+	// response that we verify/assert
+
+{
+	"key" : "value"
+	"title": "foo",
+    "body": "bar",
+    "userId": "1"
+}
+
+https://jsonplaceholder.typicode.com/posts/{post id}/comments
+
+{
+	"key" : "value"
+	"title": "foo",
+    "body": "bar",
+    "userId": "1"
+}
+
+authentication(username/password) vs authorization(access permission)guest user << user << admin
+
+
+
+http://host:port/rest/api-name/api-version/resource-name
+http://localhost:8080/rest/api/2/issue/RES-14/comment
+http://localhost:8080/rest/api/2/issue/RES-14/comment
+http://localhost:8080/rest/api/2/issue/RES-14/comment
+http://localhost:8080/rest/api/2/issue/RES-14/comment/10021
+http://localhost:8080/rest/auth/1/session
+
+POJO stands for Plain Old Java Object
+Serialization:Conversion of request body into pojo
+
+De-Serialization:Conversion of response body into pojo (class) for assertion
+response Body ---> Pojo(plan old java objects)
+
+//class with pojo format(private variables,getter/setter)
+class accessToken{
+
+	private List<String> access_token;
+	private String expires_in;
+	private String token_type;
+	private String scope;
+	
+	public String getAccessToken(){
+		return access_token;
+	}
+	public String getExpiresIn(){
+		return expires_in;
+	}
+	public String getScope(){
+		return scope;
+	}
+}

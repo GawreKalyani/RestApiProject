@@ -1,4 +1,7 @@
 /cookie/
 /httpMethods/
-/jira/
+/jiraBasicAuthentication/
 /oAuth2/
+/oauth2WithPojo/
+/pojoHttpMethod/
+/pojosForJira/

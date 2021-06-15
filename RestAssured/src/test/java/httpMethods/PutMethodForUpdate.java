@@ -10,13 +10,17 @@ public class PutMethodForUpdate {
 	@Test
 	public void putMethod(){
 		RestAssured.baseURI="https://jsonplaceholder.typicode.com/";
-		Response response=RestAssured.given().header("Content-type","application/json; charset=UTF-8")
-		.body("{\r\n" + 
+		Response response=RestAssured
+				.given()
+				.header("Content-type","application/json; charset=UTF-8")
+				.body("{\r\n" + 
 				"    \"id\": 1,\r\n" + 
 				"    \"title\": \"foo\",\r\n" + 
 				"    \"body\": \"bar\",\r\n" + 
 				"    \"userId\": \"1\"\r\n" + 
-				"}").when().put("posts/1");
+				"}")
+				.when()
+				.put("posts/1");
 		
 		System.out.println("statusCode-->"+response.getStatusCode());
 		System.out.println("body-->"+response.getBody().asPrettyString());

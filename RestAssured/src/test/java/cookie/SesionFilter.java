@@ -8,7 +8,8 @@ import io.restassured.response.Response;
 
 
 public class SesionFilter {
-	//Step 1. Create a new session using the Jira REST API and resp body give sessVal
+	
+	//Step 1. Create a new session using the Jira REST API and resp body give sessVal for POst
 	public SessionFilter getSessionId(){
 		SessionFilter session=new SessionFilter();
 		RestAssured.baseURI="http://localhost:8080/rest/auth/1/";

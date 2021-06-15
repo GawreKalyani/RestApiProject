@@ -130,3 +130,76 @@ class accessToken{
 		return scope;
 	}
 }
+
+//In json body---->  [] indicates List<> and {} represent nodes for which pojo class to be made
+{
+    "self": "http://www.example.com/jira/rest/api/2/issue/10010/comment/10000",
+    "id": "10000",
+    "author": {
+        "self": "http://www.example.com/jira/rest/api/2/user?username=fred",
+        "name": "fred",
+        "displayName": "Fred F. User",
+        "active": false
+    },
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.",
+    "updateAuthor": {
+        "self": "http://www.example.com/jira/rest/api/2/user?username=fred",
+        "name": "fred",
+        "displayName": "Fred F. User",
+        "active": false
+    },
+    "created": "2021-05-18T15:56:27.298+0000",
+    "updated": "2021-05-18T15:56:27.298+0000",
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    }
+}
+//now Response Body converting into pojo(manually)(Use GetterAndSetter method in pojo)
+MainPojoClass{
+private String self;
+private String id;
+private Author author;
+private String body;
+private UpdateAuthor updateAuthor;
+private String created;
+private String updated;
+private Visibility visibility;}
+
+Author{
+private String self;
+private String name;
+private String displayName;
+private String active;
+}
+UpdateAuthor{
+private String self;
+private String name;
+private String displayName;
+private String active;
+}
+
+Visibility{
+private String type;
+private String value;
+}
+
+
+//Request body to be converted into pojo(Use GetterAndSetter method in pojo)
+{
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.",
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    }
+}
+
+//pojoclass{
+private String body;
+private Visibility visibility;
+}
+
+Visibility{
+private String type;
+private String value;
+}

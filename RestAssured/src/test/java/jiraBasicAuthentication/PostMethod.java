@@ -13,7 +13,13 @@ public class PostMethod {
 	
 	@Test         //Add Comment   //POST /rest/api/2/issue/{issueIdOrKey}/comment
 	public void postMethod()
-	{
+	{	//passing body in request
+		JiraRequestBodyPost pojo=new JiraRequestBodyPost();
+		pojo.setBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.");
+		Visibility visibility=new Visibility();
+		visibility.setType("role");
+		visibility.setValue("Administrators");
+		
 	RestAssured.baseURI="http://localhost:8080/rest/api/2/";
 	Response response=RestAssured
 			.given()
@@ -21,13 +27,7 @@ public class PostMethod {
 			.preemptive()
 			.basic("yogitagawre", "yogitagawre")
 			.header("Content-type", "application/json; charset=UTF-8")
-			.body("{\r\n" + 
-					"    \"body\": \"This comment is added from postman.\",\r\n" + 
-					"    \"visibility\": {\r\n" + 
-					"        \"type\": \"role\",\r\n" + 
-					"        \"value\": \"Administrators\"\r\n" + 
-					"    }\r\n" + 
-					"}")
+			.body(pojo)
 			.when()
 			.post("issue/PROJ-14/comment");
 	System.out.println("statusCode"+response.getStatusCode());

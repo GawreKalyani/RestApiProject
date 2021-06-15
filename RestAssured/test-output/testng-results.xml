@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4301" started-at="2021-06-15T04:33:20Z" finished-at="2021-06-15T04:33:24Z">
+  <suite name="Default suite" duration-ms="3349" started-at="2021-06-15T13:14:57Z" finished-at="2021-06-15T13:15:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4301" started-at="2021-06-15T04:33:20Z" finished-at="2021-06-15T04:33:24Z">
-      <class name="pojoHttpMethod.PostMethod">
-        <test-method status="PASS" signature="postMethod()[pri:0, instance:pojoHttpMethod.PostMethod@4678c730]" name="postMethod" duration-ms="4281" started-at="2021-06-15T10:03:20Z" finished-at="2021-06-15T10:03:24Z">
+    <test name="Default test" duration-ms="3349" started-at="2021-06-15T13:14:57Z" finished-at="2021-06-15T13:15:01Z">
+      <class name="jiraBasicAuthentication.PutMethod">
+        <test-method status="PASS" signature="putMethod()[pri:0, instance:jiraBasicAuthentication.PutMethod@4678c730]" name="putMethod" duration-ms="3330" started-at="2021-06-15T18:44:57Z" finished-at="2021-06-15T18:45:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postMethod -->
-      </class> <!-- pojoHttpMethod.PostMethod -->
+        </test-method> <!-- putMethod -->
+      </class> <!-- jiraBasicAuthentication.PutMethod -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -10,20 +10,20 @@ import io.restassured.response.Response;
 public class PutMethod {
 	@Test
 	public void putMethod(){
-	RestAssured.baseURI="http://localhost:8080/rest/api/2/";
+		JiraRequestBodyPost pojo=new JiraRequestBodyPost();
+		pojo.setBody("Lorem ipsum is updated as per your need");
+		Visibility visibility=new Visibility();
+		visibility.setType("role");
+		visibility.setValue("Administrators");
+		
+		RestAssured.baseURI="http://localhost:8080/rest/api/2/";
 	Response response=RestAssured
 			.given()
 			.auth()
 			.preemptive()
 			.basic("yogitagawre", "yogitagawre")
 			.header("Content-type", "application/json; charset=UTF-8")
-			.body("{\r\n" + 
-			"    \"body\": \"Lorem ipsum is updated as per your need\",\r\n" + 
-			"    \"visibility\": {\r\n" + 
-			"        \"type\": \"role\",\r\n" + 
-			"        \"value\": \"Administrators\"\r\n" + 
-			"    }\r\n" + 
-			"}")
+			.body(pojo)
 			.when()
 			.put("issue/PROJ-14/comment/10107");
 	System.out.println("statusCode"+response.getStatusCode());
@@ -42,3 +42,10 @@ public class PutMethod {
 	}
 
 }
+/*"{\r\n" + 
+"    \"body\": \"Lorem ipsum is updated as per your need\",\r\n" + 
+"    \"visibility\": {\r\n" + 
+"        \"type\": \"role\",\r\n" + 
+"        \"value\": \"Administrators\"\r\n" + 
+"    }\r\n" + 
+"}"*/
